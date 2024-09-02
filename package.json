@@ -1,0 +1,32 @@
+{
+  "name": "expert-octo-waffle",
+  "version": "0.1.0",
+  "description": "through the refiner's fire",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "jest",
+    "start": "ts-node ./src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trevclev0/expert-octo-waffle.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trevclev0/expert-octo-waffle/issues"
+  },
+  "homepage": "https://github.com/trevclev0/expert-octo-waffle#readme",
+  "dependencies": {
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@playwright/test": "^1.46.1",
+    "@types/node": "^22.5.2",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2"
+  }
+}
