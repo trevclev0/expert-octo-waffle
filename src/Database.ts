@@ -1,13 +1,15 @@
+import DbEntry from "./DbEntry";
+
 class Database implements iDatabase {
-    #data: Map<string, Map<string, string>>;
+    #data: Map<string, DbEntry>;
 
     constructor() {
-        this.#data = new Map<string, Map<string, string>>();
+        this.#data = new Map<string, DbEntry>();
     }
 
     set(id: string, key: string, val: string): void {
         if (!this.#data.has(key)) {
-            this.#data.set(id, new Map([[key, val]]));
+            this.#data.set(id, new DbEntry());
         }
         this.#data.get(id)?.set(key, val);
     }
