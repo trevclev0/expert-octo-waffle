@@ -27,4 +27,24 @@ describe('Database', () => {
 
         expect(db.get(id, key)).toEqual('');
     });
+
+    test('Get db entries sorted', () => {
+        const idA = '14moRX';
+        const nameA = 'John';
+        const colorA = 'turquoise';
+        const idB = 'deinT3';
+        const nameB = 'harry';
+        const colorB = 'green';
+        const keyName = 'name';
+        const keyColor = 'color';
+
+        db.set(idA, keyColor, colorA);
+        db.set(idA, keyName, nameA);
+
+        db.set(idB, keyColor, colorB);
+        db.set(idB, keyName, nameB);
+
+        expect(db.getAllSorted(idA)).toEqual(`{"color":"${colorA}","name":"${nameA}"}`);
+        expect(db.getAllSorted(idB)).toEqual(`{"color":"${colorB}","name":"${nameB}"}`);
+    })
 });
